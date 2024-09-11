@@ -11,9 +11,11 @@ class MainController extends AbstractController
     #[Route('/', name: 'homepage')]
     public function index(): Response
     {
-        return $this->render('main/index.html.twig', [
+        return $this->render('main/index.html.twig', parameters:[
            // 'controller_name' => 'MainController',
             'title' => 'Homepage',
+            'homepage_text' => "Nous somme le ".date('d/m/Y \à H:i'),
+
         ]);
     }
 }
