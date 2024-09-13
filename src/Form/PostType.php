@@ -21,10 +21,11 @@ class PostType extends AbstractType
                 'empty_data' => date(format:'Y-m-d H:i:s'),
                 'required' => false,
             ])
-            ->add('postDatePublished', null, [
-                'widget' => 'single_text',
-            ])
-            ->add('postIsPublished')
+            //->add('postDatePublished', null, [
+                //'widget' => 'single_text',
+            
+            //])
+            // ->add('postIsPublished')
             ->add('sections', EntityType::class, [
                 'class' => Section::class,
                 'choice_label' => 'id',

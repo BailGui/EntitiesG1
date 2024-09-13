@@ -26,6 +26,8 @@ final class AdminPostController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
         $post = new Post();
+        // on souhaite qu'on ne puisse pas mettre directement postIsPublished sur true, on évite l'envoi de 'null' par défaut
+        $post-> setPostIsPublished(false);
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
 
