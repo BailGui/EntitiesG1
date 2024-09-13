@@ -18,4 +18,10 @@ class Tag
         ]
     )
     ]
+    private ?int $id = null;
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 }
+

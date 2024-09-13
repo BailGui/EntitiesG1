@@ -17,5 +17,10 @@ class Section
             'unsigned' =>  true,
         ]
     )
-    ]
+        ]
+        private ?int $id = null;
+        public function getId(): ?int
+        {
+            return $this->id;
+        }
 }
