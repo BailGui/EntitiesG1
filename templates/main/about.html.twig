@@ -3,6 +3,8 @@
 {% block title %}{{ parent() }} | {{ title }}{% endblock %}
 
 {% block body %}
-<h1> {{ title }} </h1>
-<p> {{ homepage_text }} </p>
+<div class="container mt-5">
+<h1 class="text-center"> {{ title }} </h1>
+<p class="mt-5"> {{ homepage_text }} </p>
+</div>
 {% endblock %}
