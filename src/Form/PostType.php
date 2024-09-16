@@ -24,9 +24,9 @@ class PostType extends AbstractType
                 'required' => false,
             ])
 
-            ->add('postDatePublished', null, [
-                'widget' => 'single_text',
-            ])
+            //->add('postDatePublished', null, [
+            //    'widget' => 'single_text',
+            //])
             // en supprimant ce add, on doit modifier AdminPostController pour
             // donner une valeur par défaut à postIsPublished
             //->add('postIsPublished')
