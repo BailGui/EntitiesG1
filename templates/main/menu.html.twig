@@ -7,8 +7,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="{{ path('homepage') }}">Accueil</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ path('about_me') }}">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#!">nos sections</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ path('about_me') }}">A propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#!">Nos sections</a></li>
                 {# si nous sommes connectés #}
                 {% if is_granted('IS_AUTHENTICATED') %}
                 <li class="nav-item"><a class="nav-link" href="{{ path('app_logout') }}">Déconnexion</a></li>
