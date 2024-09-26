@@ -2,21 +2,26 @@
 
 namespace App\Controller;
 
+# appel du gestionnaire de section
+use App\Repository\SectionRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
     #[Route(path: '/login', name: 'app_login')]
-    public function login(AuthenticationUtils $authenticationUtils): Response
+    public function login(AuthenticationUtils $authenticationUtils, SectionRepository $sections): Response
     {
+
         // si on est déjà connecté
-        if($this->getUser()) {
+        if ($this->getUser()) {
             // on retourne sur l'accueil
             return $this->redirectToRoute('homepage');
         }
+
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 
@@ -26,6 +31,8 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error' => $error,
+            # on met dans une variable pour twig toutes les sections récupérées
+            'sections' => $sections->findAll()
         ]);
     }
 
